@@ -1,10 +1,8 @@
 package org.it_academy.selenium_study.onliner;
 
-import org.it_academy.selenium_study.framework.Driver;
 import org.it_academy.selenium_study.framework.pageobjects.onliner_page_objects.CatalogPage;
 import org.it_academy.selenium_study.framework.pageobjects.onliner_page_objects.Header;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
@@ -34,8 +32,7 @@ public class SectionTest extends OnlinerTestsBase {
         header
                 .clickOnMainNavigationLink("Каталог");
 
-        List<WebElement> sectionsWebElements = Driver.getWebDriver()
-                .findElements(By.xpath(CatalogPage.CATALOG_CLASSIFIER_XPATH_FOR_SECTION_CHECK));
+        List<WebElement> sectionsWebElements = new CatalogPage().getListOfSectionElements();
 
         sectionsWebElements.forEach(webElement -> currentSections.add(webElement.getText()));
 

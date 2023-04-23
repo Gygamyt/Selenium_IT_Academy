@@ -1,7 +1,11 @@
 package org.it_academy.selenium_study.framework.pageobjects.onliner_page_objects;
 
+import org.it_academy.selenium_study.framework.Driver;
 import org.it_academy.selenium_study.framework.pageobjects.BasePage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 import static java.lang.String.format;
 
@@ -22,6 +26,13 @@ public class CatalogPage extends BasePage {
     public static final String CATALOG_CLASSIFIER_XPATH_FOR_SECTION_CHECK = "//ul[@class=\"catalog-navigation-classifier \"]"
             + "/li[@class=\"catalog-navigation-classifier__item \"]";
 
+    public List<WebElement> getListOfSectionElements() {
+        return Driver.getWebDriver().findElements(By.xpath(CATALOG_CLASSIFIER_XPATH_FOR_SECTION_CHECK));
+    }
+
+    public List<WebElement> getCatalogNavigationList() {
+        return Driver.getWebDriver().findElements(By.xpath(ANCESTOR_OF_CATALOG_NAVIGATION_LIST));
+    }
 
     public CatalogPage clickOnCatalogClassifierLink(String link) {
         waitForElementVisible(By.xpath(format(CATALOG_CLASSIFIER_LINK_XPATH_PATTERN, link)))

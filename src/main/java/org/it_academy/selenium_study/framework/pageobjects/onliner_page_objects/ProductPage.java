@@ -30,8 +30,4 @@ public class ProductPage extends BasePage {
         }
         return util;
     }
-
-    public List<WebElement> getListOfProductsElements() {
-        return Driver.getWebDriver().findElements(By.xpath(PRODUCT_GROUP));
-    }
 }

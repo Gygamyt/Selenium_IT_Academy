@@ -1,16 +1,14 @@
 package org.it_academy.selenium_study.onliner;
 
-import org.it_academy.selenium_study.framework.Driver;
 import org.it_academy.selenium_study.framework.pageobjects.onliner_page_objects.CatalogPage;
 import org.it_academy.selenium_study.framework.pageobjects.onliner_page_objects.Header;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
-import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 public class CatalogNavigationTests extends OnlinerTestsBase {
 
@@ -27,8 +25,7 @@ public class CatalogNavigationTests extends OnlinerTestsBase {
                 .clickOnCatalogClassifierLink("Компьютеры")
                 .clickOnCatalogClassifierCategoryLink("Комплектующие");
 
-        List<WebElement> sectionsWebElements = Driver.getWebDriver()
-                .findElements(By.xpath(CatalogPage.ANCESTOR_OF_CATALOG_NAVIGATION_LIST));
+        List<WebElement> sectionsWebElements = new CatalogPage().getCatalogNavigationList();
 
         sectionsWebElements.forEach(webElement -> currentComponents.add(webElement.getText()));
 
