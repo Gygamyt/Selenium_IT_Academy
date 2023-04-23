@@ -18,6 +18,6 @@ public class ProductsListsTests extends OnlinerTestsBase {
                 .clickOnCatalogClassifierLink("Электроника")
                 .clickOnCatalogClassifierCategoryLink("Аудиотехника")
                 .clickOnProductLink("Наушники");
-        productPage.getListOfProductsElements().forEach(webElement -> assertThat(webElement.isEnabled()).isTrue());
+        productPage.getListOfRequiredFields().forEach(webElement -> assertThat(webElement.isEnabled()).isTrue());
     }
 }
