@@ -1,9 +1,9 @@
 package org.it_academy.selenium_study.onliner;
 
+import com.codeborne.selenide.ElementsCollection;
 import org.it_academy.selenium_study.framework.pageobjects.onliner_page_objects.CatalogPage;
 import org.it_academy.selenium_study.framework.pageobjects.onliner_page_objects.Header;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,16 +25,16 @@ public class SectionTest extends OnlinerTestsBase {
         add("Детям и мамам");
     }};
 
-    private final ArrayList<String> currentSections = new ArrayList<>();
+    private final List<String> currentSections = new ArrayList<>();
 
     @Test
     public void sectionCheckTest() {
         header
                 .clickOnMainNavigationLink("Каталог");
 
-        List<WebElement> sectionsWebElements = new CatalogPage().getListOfSectionElements();
+        ElementsCollection sectionsWebElements = new CatalogPage().getSectionsElements();
 
-        sectionsWebElements.forEach(webElement -> currentSections.add(webElement.getText()));
+        sectionsWebElements.forEach(selenideElement -> currentSections.add(selenideElement.getText()));
 
         assertThat(currentSections)
                 .as("Current sections does match the required sections.")

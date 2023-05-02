@@ -1,9 +1,9 @@
 package org.it_academy.selenium_study.onliner;
 
+import com.codeborne.selenide.ElementsCollection;
 import org.it_academy.selenium_study.framework.pageobjects.onliner_page_objects.CatalogPage;
 import org.it_academy.selenium_study.framework.pageobjects.onliner_page_objects.Header;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ public class CatalogNavigationTests extends OnlinerTestsBase {
             "^[^\\r\\n]*\\n\\d{1,3}(,\\d{3})*(\\s+|\\s*(?=товар[ов]'a'))(товаров|товара|товар)\\nот\\s\\d+(?:,\\d+)?\\sр\\.";
     private final Header header = new Header();
 
-    private final ArrayList<String> currentComponents = new ArrayList<>();
+    private final List<String> currentComponents = new ArrayList<>();
 
     @Test
     public void componentListTest() {
@@ -25,9 +25,9 @@ public class CatalogNavigationTests extends OnlinerTestsBase {
                 .clickOnCatalogClassifierLink("Компьютеры")
                 .clickOnCatalogClassifierCategoryLink("Комплектующие");
 
-        List<WebElement> sectionsWebElements = new CatalogPage().getCatalogNavigationList();
+        ElementsCollection sectionsWebElements = new CatalogPage().getCatalogNavigation();
 
-        sectionsWebElements.forEach(webElement -> currentComponents.add(webElement.getText()));
+        sectionsWebElements.forEach(webElement -> currentComponents.add(webElement.getText())); //tam dobavili slovo "new" otchego test lozhitsya...
 
         currentComponents.forEach(components -> assertThat(components.matches(REGULAR_EXPRESSION))
                 .as("Element fails validation")

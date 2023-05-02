@@ -1,7 +1,7 @@
 package org.it_academy.selenium_study.onliner;
 
 import org.it_academy.selenium_study.framework.pageobjects.onliner_page_objects.Header;
-import org.it_academy.selenium_study.framework.pageobjects.onliner_page_objects.ProductPage;
+import org.it_academy.selenium_study.framework.pageobjects.onliner_page_objects.ProductsPage;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
@@ -9,7 +9,7 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 public class ProductsListsTests extends OnlinerTestsBase {
 
     private final Header header = new Header();
-    private final ProductPage productPage = new ProductPage();
+    private final ProductsPage productsPage = new ProductsPage();
 
     @Test
     public void headphonesListTest() {
@@ -18,6 +18,6 @@ public class ProductsListsTests extends OnlinerTestsBase {
                 .clickOnCatalogClassifierLink("Электроника")
                 .clickOnCatalogClassifierCategoryLink("Аудиотехника")
                 .clickOnProductLink("Наушники");
-        productPage.getListOfRequiredFields().forEach(webElement -> assertThat(webElement.isEnabled()).isTrue());
+        productsPage.getFieldsForVisibilityCheck().forEach(webElement -> assertThat(webElement.isEnabled()).isTrue());
     }
 }
