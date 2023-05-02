@@ -12,7 +12,7 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 public class CatalogNavigationTests extends OnlinerTestsBase {
 
-    private final String REGULAR_EXPRESSION =
+    private final String REGULAR_EXPRESSION_FOR_COMPONENTS_CHECK =
             "^[^\\r\\n]*\\n\\d{1,3}(,\\d{3})*(\\s+|\\s*(?=товар[ов]'a'))(товаров|товара|товар)\\nот\\s\\d+(?:,\\d+)?\\sр\\.";
     private final Header header = new Header();
 
@@ -29,7 +29,7 @@ public class CatalogNavigationTests extends OnlinerTestsBase {
 
         sectionsWebElements.forEach(webElement -> currentComponents.add(webElement.getText())); //tam dobavili slovo "new" otchego test lozhitsya...
 
-        currentComponents.forEach(components -> assertThat(components.matches(REGULAR_EXPRESSION))
+        currentComponents.forEach(components -> assertThat(components.matches(REGULAR_EXPRESSION_FOR_COMPONENTS_CHECK))
                 .as("Element fails validation")
                 .isTrue());
     }
