@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
-public class ProductsListsTests extends OnlinerTestsBase {
+public class ProductsListsTest extends OnlinerBaseTest {
 
     private final Header header = new Header();
     private final ProductsPage productsPage = new ProductsPage();

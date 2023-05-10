@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
-public class SectionsTest extends OnlinerTestsBase {
+public class SectionsTest extends OnlinerBaseTest {
     private final Header header = new Header();
     private final CatalogPage catalogPage = new CatalogPage();
 

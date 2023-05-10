@@ -10,7 +10,7 @@ import java.util.List;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
-public class SearchTests extends OnlinerTestsBase {
+public class SearchTest extends OnlinerBaseTest {
 
     private final String SEARCH_REQUEST = "samsung galaxy s20";
 

@@ -24,6 +24,9 @@ public class MainPageOnliner extends BasePage {
         return isElementVisible(By.xpath(IFRAME_XPATH));
     }
 
+    public String getProductName() {
+        return $(PRODUCT_NAME_XPATH).getText();
+    }
     public ProductPage clickOnProductLink() {
         $(PRODUCT_NAME_XPATH).click();
         return new ProductPage();

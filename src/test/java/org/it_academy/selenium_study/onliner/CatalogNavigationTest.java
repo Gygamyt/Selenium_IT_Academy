@@ -10,7 +10,7 @@ import java.util.List;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
-public class CatalogNavigationTests extends OnlinerTestsBase {
+public class CatalogNavigationTest extends OnlinerBaseTest {
 
     private final String REGULAR_EXPRESSION_FOR_COMPONENTS_CHECK =
             "^[^\\r\\n]*\\n\\d{1,3}(,\\d{3})*(\\s+|\\s*(?=товар[ов]'a'))(товаров|товара|товар)\\nот\\s\\d+(?:,\\d+)?\\sр\\.";
@@ -27,7 +27,7 @@ public class CatalogNavigationTests extends OnlinerTestsBase {
 
         ElementsCollection sectionsWebElements = new CatalogPage().getCatalogNavigation();
 
-        sectionsWebElements.forEach(webElement -> currentComponents.add(webElement.getText())); //tam dobavili slovo "new" otchego test lozhitsya...
+        sectionsWebElements.forEach(webElement -> currentComponents.add(webElement.getText()));
 
         currentComponents.forEach(components -> assertThat(components.matches(REGULAR_EXPRESSION_FOR_COMPONENTS_CHECK))
                 .as("Element fails validation")
