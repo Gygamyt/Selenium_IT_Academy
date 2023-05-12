@@ -10,6 +10,6 @@ public class Driver {
         Configuration.browserSize = "1920x1080";
         Configuration.holdBrowserOpen = false;
         Configuration.browser = Browsers.CHROME;
-        Configuration.headless = false;
+        Configuration.headless = true;
     }
 }
