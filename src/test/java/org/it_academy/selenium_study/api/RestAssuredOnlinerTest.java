@@ -1,6 +1,5 @@
 package org.it_academy.selenium_study.api;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.it_academy.selenium_study.framework.rest_api.services.ProductService;
 import org.junit.jupiter.api.Test;
 
@@ -10,8 +9,6 @@ import static org.it_academy.selenium_study.framework.rest_api.endpoints.Onliner
 import static org.it_academy.selenium_study.framework.rest_api.endpoints.OnlinerEndpoints.getSushiProductsEndpoint;
 
 public class RestAssuredOnlinerTest {
-
-    private static final ObjectMapper mapper = new ObjectMapper();
 
     @Test
     public void checkRequest() {
