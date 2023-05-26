@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Tests') {
             steps {
-                  bat "mvn clean test -Dbrowser=edge -Dheadless=0"
+                  bat "mvn clean test -Dbrowser=chrome -Dheadless=0"
             }
         }
             }
