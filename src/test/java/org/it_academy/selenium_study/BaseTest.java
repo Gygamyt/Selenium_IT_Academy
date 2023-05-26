@@ -10,9 +10,6 @@ public class BaseTest {
 
     @BeforeEach
     public void initDriver() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
-                .screenshots(true)
-                .savePageSource(true));
         Driver.initDriver();
     }
 }
