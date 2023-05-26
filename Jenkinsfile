@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Tests') {
             steps {
-                  CMD "clean test -Dbrowser=edge -Dheadless=1"
+                  bat "clean test -Dbrowser=edge -Dheadless=1"
             }
         }
             }
