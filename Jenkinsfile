@@ -14,7 +14,7 @@ pipeline {
             }
         post {
                always {
-                       allure includeProperties: false, jdk: '', properties: [[key: 'allure.results.directory', value: 'build/allure-results']], report: 'target/allure-report', results: [[path: 'build/allure-results']]
+                      allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
                }
             }
         }
